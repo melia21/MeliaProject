@@ -1,4 +1,4 @@
-package main.java.Utils;
+package src.main.java.Utils;
 import org.openqa.selenium.chrome.ChromeDriverService;
 
 import java.io.FileInputStream;
@@ -7,12 +7,16 @@ import java.util.Properties;
 public class PropertyManager {
     public static String CHROME_DRIVER_EXE_PATH;
     public static String URL;
-    public static void initProperties () {
+    public PropertyManager(){
+        initProperties();
+        System.out.println("Properties initialized");
+    }
+    public void initProperties () {
         Properties props = new Properties();
         FileInputStream in;
         try {
             System.out.println("Started to initialize properties");
-            in = new FileInputStream("main/resources/Properties/selenium.properties");
+            in = new FileInputStream("src/main/resources/Properties/selenium.properties");
             props.load(in);
             CHROME_DRIVER_EXE_PATH=props.getProperty("Driver.Chrome.Path");
             URL=props.getProperty("project.Url");
