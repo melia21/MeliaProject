@@ -1,11 +1,8 @@
-package src.main.java;
-
-
 import org.junit.jupiter.api.Test;
 
-public class SimpleTest {
+public class Test1 {
     @Test
-    void RunGoogle(){
+    public void Test1(){
         org.junit.jupiter.api.Assertions.assertEquals(4,5);
     }
 }

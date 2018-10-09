@@ -1,4 +1,4 @@
-package src.main.java;
+package main.java;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 public class DriverManager {
