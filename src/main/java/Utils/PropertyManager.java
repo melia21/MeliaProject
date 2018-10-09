@@ -7,25 +7,20 @@ import java.util.Properties;
 public class PropertyManager {
     public  String CHROME_DRIVER_EXE_PATH;
     public  String URL;
-    public PropertyManager(){
-        initProperties();
-        System.out.println("Properties initialized");
-    }
+    private String propertyPath ="/TestProject1/src/main/resources/Properties/selenium.properties";
     public void initProperties () {
         Properties props = new Properties();
         FileInputStream in;
         try {
-            System.out.println("Started to initialize properties");
-            in = new FileInputStream("src/main/resources/Properties/selenium.properties");
+            in = new FileInputStream(propertyPath);
             props.load(in);
             CHROME_DRIVER_EXE_PATH=props.getProperty("Driver.Chrome.Path");
-            URL=props.getProperty("project.Url");
+            URL=props.getProperty("Project.Url");
         }
         catch (java.io.IOException e){
-            System.out.println("File not found");
+            System.out.println("File not found " + propertyPath);
         }
         System.setProperty(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY, CHROME_DRIVER_EXE_PATH);
-
 
     }
 }
