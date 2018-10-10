@@ -8,9 +8,8 @@ import org.junit.runner.Result;
 public class Main {
     public static void main(String[] args) {
         PropertyManager p =new PropertyManager();
-        p.initProperties();
         DriverManager driver = new DriverManager();
-        driver.start(p.URL);
+        driver.get(p.URL);
         Result result = JUnitCore.runClasses();
         System.out.println(result.getFailures().toString());
         System.out.println("Result : "+result.wasSuccessful());

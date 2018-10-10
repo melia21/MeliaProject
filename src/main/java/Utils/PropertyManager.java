@@ -7,11 +7,15 @@ import java.util.Properties;
 public class PropertyManager {
     public  String CHROME_DRIVER_EXE_PATH;
     public  String URL;
-    private String propertyPath ="/TestProject1/src/main/resources/Properties/selenium.properties";
-    public void initProperties () {
+    public PropertyManager(){
+        initProperties();
+    }
+    private void initProperties () {
+        String propertyPath ="/TestProject1/src/main/resources/Properties/selenium.properties";
         Properties props = new Properties();
         FileInputStream in;
         try {
+
             in = new FileInputStream(propertyPath);
             props.load(in);
             CHROME_DRIVER_EXE_PATH=props.getProperty("Driver.Chrome.Path");
@@ -23,4 +27,5 @@ public class PropertyManager {
         System.setProperty(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY, CHROME_DRIVER_EXE_PATH);
 
     }
+
 }

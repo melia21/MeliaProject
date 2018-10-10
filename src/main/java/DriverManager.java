@@ -1,18 +1,14 @@
 package main.java;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-public class DriverManager {
+public class DriverManager extends ChromeDriver {
     public DriverManager(){
         System.out.println("Object DriverManager created");
     }
-    ChromeDriver driver = new ChromeDriver();
-    public void start(String url) {
-        driver.get(url);
-    }
-
-    public void quit() {
-        driver.quit();
+    public void search(){
+    //this.findElement(By.xpath())
     }
 }
