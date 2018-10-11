@@ -10,9 +10,15 @@ public class Main {
         PropertyManager p =new PropertyManager();
         DriverManager driver = new DriverManager();
         driver.get(p.URL);
-        Result result = JUnitCore.runClasses();
-        System.out.println(result.getFailures().toString());
-        System.out.println("Result : "+result.wasSuccessful());
+        if (driver.isEnabled(AhlPage.LOGOSBAR) ==true) {
+            System.out.println("I have found LOGOBAR");
+        }
+        else{
+            System.out.println("Get a hell out of here");
+        }
+        //Result result = JUnitCore.runClasses();
+        //System.out.println(result.getFailures().toString());
+        //System.out.println("Result : "+result.wasSuccessful());
         driver.quit();
     }
 }

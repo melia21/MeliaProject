@@ -1,14 +1,20 @@
 package main.java;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 
 
 public class DriverManager extends ChromeDriver {
     public DriverManager(){
         System.out.println("Object DriverManager created");
     }
-    public void search(){
-    //this.findElement(By.xpath())
+    public boolean isEnabled(String locator){
+        try {
+            return findElement(By.xpath(locator)).isEnabled();
+        }
+        catch(org.openqa.selenium.NoSuchElementException e){
+            return false;
+        }
     }
 }
